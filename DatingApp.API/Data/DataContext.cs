@@ -9,5 +9,6 @@ namespace DatingApp.API.Data
         //Tell entity framework about entity; Values is the Table_name in SQL
         public DbSet<Value> Values { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Photo> Photos {get; set; }
     }
 }
