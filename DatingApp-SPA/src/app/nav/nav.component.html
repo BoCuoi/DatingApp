@@ -1,20 +1,20 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
-      <a class="navbar-brand" href="#">Dating App</a>  
+      <a class="navbar-brand" [routerLink]="['/home']">Dating App</a>  
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
-        <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Matches <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
-          </li>              
-        </ul>
-      </div>
+      
+      <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/members']">Matches <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/lists']">Lists</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/messages']">Messages</a>
+        </li>               
+      </ul>
+  
       <div *ngIf="loggedIn()" class="dropdown" dropdown>
         <a class="dropdown-toggle text-light" dropdownToggle>
           Welcome {{authService.decodedToken?.unique_name | titlecase}}
